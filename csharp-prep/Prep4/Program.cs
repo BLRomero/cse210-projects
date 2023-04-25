@@ -40,8 +40,16 @@ class Program
     }
     Console.WriteLine($"The largest number is: {max}");
 
+    int smallest = numbers[0];
+    foreach (int number in numbers)
+    {
+        if (number < smallest && number > 0 )
+        {
+            smallest = number;
+        }
+    }
+    Console.WriteLine($"The smallest number is: {smallest}");
 
-
-    
+  
     }
 }
