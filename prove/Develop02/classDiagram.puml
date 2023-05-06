@@ -1,0 +1,41 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ClassDiagram
+{
+  class program
+  {
+    main;
+    input;
+  }
+
+  class journal{
+    display();
+    saveText();
+    load();
+  }
+
+  class entry{
+    write();
+    saveEntry(
+      DateTim();
+    );
+    image();
+  }
+
+  class promptGenerator{
+    addPrompt(){
+      source();
+    };
+    checkDuplicates(){
+       promptList();
+    };
+  }
+
+}
+
+
