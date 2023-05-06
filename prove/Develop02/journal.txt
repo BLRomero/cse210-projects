@@ -1,0 +1,64 @@
+Journal Program
+
+Classes:
+    Program:
+        Behaviors:
+            -	main(): Runs the program, main entry. Calls input in a loop.
+            -	input(): Prompts the user for what task they want to run (save, load, write, load image, etc.) Calls each function based on user input.
+
+
+            
+ function?
+            
+
+    Journal: contains all the entries. This will also be able to be saved in a .csv file and displayed.
+        Behaviors:
+            -	display(_entriesNew): Takes all written journal entries from a file and display it (loop and display all entries using displayEntry)
+            
+            -	save(_entriesNew): Save the text of the journal to a .csv file, taking all of its entries with it
+
+            -	load(): Looks through .csv file, displays options to load. Prompts user for which entry in the journal they want to load.
+            
+            -	save(): Saves journal to .csv file, replacing its text, maybe merge the two entry lists together, 
+                and replace everything. Or, just tag the current entries on to the .csv file into the appropriate section. Calls the journal’s save
+
+        Attributes:
+            -	_entriesOld: A list of entries made up from the Entry class, ones that have already been saved. 
+                These are where the .csv text will be loaded into.
+            
+            -	_entriesNew: This is where new entries will be saved, and these are the entries that will be written to the file.
+            -   List<Entries> newEntries: This will be a list of entry objects, added after each entry is completed
+                
+
+
+    Entry: one specific entry into a journal
+        Behaviors:
+                
+            -   displayEntry(): Displays prompt, answer, and datetime of entry.
+            -   requestImage(): asks the user for an image file to add to the entry, and saves it
+
+            -	write(_promptList from PromptGenerator): Creates a new entry with the datetime as the title (maybe, maybe another title). 
+                Runs the prompts and continues to prompt until the user saves, or the questions run out. 
+                Takes these text entries as new entry classes, and adds them to the journal class list of entries.
+
+            -   putInJournal(): This will put the current entry into the Journal that is open
+
+
+        Attributes:
+            -	_datetime: Keeps the date and time that the journal entry was filled so you can sort 
+                the entries by date and time for calling later.
+
+            -   _image: an image that the user provides accompanying a journal entry
+            -   _prompt: The current prompt being used
+            -   _answer: The user's input 
+
+
+    PromptGenerator:
+        Behaviors:
+        -   addPrompt(): Add a new prompt to the list
+        -   display():
+        -   checkDuplicates(): Searches prompts for duplicates
+        Attributes:
+        -   _promptList - List of prompts, question
+        -   _source - Lists where the prompt is from (internet, user input, json, csv, txt, etc.)
+
